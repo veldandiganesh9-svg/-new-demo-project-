@@ -1,0 +1,465 @@
+﻿/* ================================
+   PAGE
+================================ */
+
+body {
+    margin: 0;
+    background: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #333;
+}
+
+
+/* ================================
+   MAIN CONTAINER
+================================ */
+
+.claims-page {
+    width: 1100px;
+    margin: 20px auto;
+    border: 1px solid #d5d5d5;
+    background: #ffffff;
+}
+
+
+/* ================================
+   TOP HEADER
+================================ */
+
+.top-header {
+    height: 42px;
+    background: #08728a;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 150px;
+    align-items: center;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+
+.app-name {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+
+.crw {
+    background: #333;
+    padding: 3px 6px;
+    margin-right: 5px;
+    font-size: 11px;
+}
+
+
+.user-role {
+    text-align: center;
+    font-size: 14px;
+}
+
+
+.username {
+    text-align: right;
+    font-weight: bold;
+}
+
+
+/* ================================
+   PROJECT HEADER
+================================ */
+
+.project-header {
+    height: 52px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+
+.project-number {
+    font-size: 16px;
+    font-weight: bold;
+    color: #05638d;
+    text-decoration: underline;
+    margin-right: 10px;
+}
+
+
+.action-button {
+    background: #e7eeee;
+    border: 1px solid #b5bcbc;
+    padding: 5px 17px;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+
+    .action-button:hover {
+        background: #d5e1e1;
+    }
+
+
+.sub-project {
+    margin-left: 10px;
+}
+
+
+/* ================================
+   TABS
+================================ */
+
+.tabs {
+    display: flex;
+    height: 38px;
+    border-bottom: 1px solid #aaa;
+    padding-left: 10px;
+}
+
+
+.tab {
+    min-width: 82px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    background: #dcecef;
+    border: 1px solid #c4d5d8;
+    border-bottom: none;
+    margin-right: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+
+    .tab.active {
+        background: #0085a0;
+        color: white;
+        font-weight: bold;
+    }
+
+
+/* ================================
+   MAIN GRID
+================================ */
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 245px 1fr 205px;
+    min-height: 500px;
+    padding: 10px;
+    gap: 12px;
+    box-sizing: border-box;
+}
+
+
+/* ================================
+   LEFT PANEL
+================================ */
+
+.left-panel {
+    border-right: 1px solid #d0d0d0;
+    padding-right: 10px;
+}
+
+
+.panel-title {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 105px 1fr;
+    row-gap: 13px;
+    line-height: 15px;
+}
+
+
+.label {
+    color: #555;
+    font-size: 10px;
+}
+
+
+.value {
+    font-size: 10px;
+    color: #333;
+}
+
+
+.reassign {
+    display: block;
+    margin-top: 3px;
+    background: #e9eeee;
+    border: 1px solid #b7b7b7;
+    font-size: 9px;
+    padding: 2px 10px;
+    cursor: pointer;
+}
+
+
+/* ================================
+   CENTER PANEL
+================================ */
+
+.center-panel {
+    position: relative;
+    padding: 0 5px;
+}
+
+
+/* ================================
+   CLAIM SUMMARY
+================================ */
+
+.claim-summary {
+    height: 95px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.claim-circle {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: #08738a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+}
+
+
+    .claim-circle strong {
+        font-size: 15px;
+        margin-top: 2px;
+    }
+
+
+.claim-types {
+    margin-left: 35px;
+    width: 210px;
+}
+
+
+.claim-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 13px 0;
+    font-size: 10px;
+}
+
+
+    .claim-row strong {
+        font-size: 11px;
+    }
+
+
+/* ================================
+   PROD SECTION
+================================ */
+
+.prod-section {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    width: 95px;
+    text-align: center;
+    font-size: 9px;
+    line-height: 13px;
+}
+
+
+    .prod-section b {
+        font-size: 10px;
+        display: block;
+        margin-bottom: 3px;
+    }
+
+
+/* ================================
+   FINANCIAL SECTION
+================================ */
+
+.financial-section {
+    margin-top: 8px;
+}
+
+
+.section-title {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+
+.financial-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9px;
+}
+
+
+    .financial-table th,
+    .financial-table td {
+        border: 1px solid #cfcfcf;
+        padding: 6px;
+        height: 15px;
+    }
+
+
+    .financial-table th {
+        background: #eeeeee;
+        text-align: center;
+        font-weight: bold;
+    }
+
+
+    .financial-table td:first-child {
+        width: 55%;
+        font-weight: normal;
+    }
+
+
+    .financial-table td:not(:first-child) {
+        text-align: center;
+    }
+
+
+/* ================================
+   BOTTOM GRID
+================================ */
+
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+
+.submit-box {
+    border: 1px solid #aaa;
+    text-align: center;
+    padding: 8px;
+    font-size: 9px;
+    line-height: 13px;
+    background: #f5f5f5;
+}
+
+
+.message-box {
+    border: 1px solid #aaa;
+    padding: 8px;
+    font-size: 9px;
+    line-height: 13px;
+    background: #f8f8f8;
+}
+
+
+/* ================================
+   RIGHT PANEL
+================================ */
+
+.right-panel {
+    border-left: 1px solid #d0d0d0;
+    padding-left: 10px;
+}
+
+
+.on-hold-button {
+    width: 100%;
+    background: #eeeeee;
+    border: 1px solid #bbb;
+    padding: 7px 3px;
+    font-size: 9px;
+    cursor: pointer;
+}
+
+
+.on-hold-title {
+    margin-top: 18px;
+    border: 1px solid #aaa;
+    padding: 7px;
+    text-align: center;
+    font-weight: bold;
+    background: #f2f2f2;
+    font-size: 11px;
+}
+
+
+.workflow-title {
+    margin-top: 12px;
+    font-weight: bold;
+    font-size: 10px;
+    margin-bottom: 7px;
+}
+
+
+.workflow-item {
+    height: 27px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+}
+
+
+.workflow-number {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #eeeeee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: bold;
+}
+
+
+    .workflow-number.current {
+        background: #08738a;
+        color: white;
+    }
+
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1200px) {
+
+    .claims-page {
+        width: 95%;
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .left-panel,
+    .right-panel {
+        border: none;
+    }
+
+    .tabs {
+        overflow-x: auto;
+    }
+}

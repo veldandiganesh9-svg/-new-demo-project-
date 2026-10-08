@@ -1,0 +1,509 @@
+﻿@model demo_project.Models.ProjectReviewViewModel
+
+@{
+    ViewData["Title"] = "Project Review";
+}
+
+<link rel="stylesheet" href="~/css/projectreview.css" />
+
+<div class="claims-page">
+
+    <!-- TOP HEADER -->
+    <div class="top-header">
+
+        <div class="app-name">
+            <span class="crw">CRW</span>
+            <span>Claims Reprocessing App</span>
+        </div>
+
+        <div class="user-role">
+            User Role: <b>Analyst: Project Review</b>
+        </div>
+
+        <div class="username">
+            Username
+        </div>
+
+    </div>
+
+
+    <!-- PROJECT HEADER -->
+    <div class="project-header">
+
+        <a href="#" class="project-number">
+            @Model.ProjectNumber
+        </a>
+
+        <button class="action-button">Accept</button>
+
+        <button class="action-button">Reject</button>
+
+        <button class="action-button">Hold</button>
+
+        <button class="action-button sub-project">
+            Create Sub Project
+        </button>
+
+    </div>
+
+
+    <!-- TABS -->
+    <div class="tabs">
+
+        <div class="tab active">
+            Overview
+        </div>
+
+        <div class="tab">
+            Initial<br />
+            Analysis
+        </div>
+
+        <div class="tab">
+            Post<br />
+            Analysis
+        </div>
+
+        <div class="tab">
+            Cost Review
+        </div>
+
+        <div class="tab">
+            Notes
+        </div>
+
+        <div class="tab">
+            Attachments
+        </div>
+
+        <div class="tab">
+            Related<br />
+            Items
+        </div>
+
+        <div class="tab">
+            History
+        </div>
+
+    </div>
+
+
+    <!-- MAIN GRID -->
+
+    <div class="main-grid">
+
+
+        <!-- LEFT COLUMN -->
+
+        <div class="left-panel">
+
+            <div class="panel-title">
+                Project Details
+            </div>
+
+
+            <div class="details-grid">
+
+                <div class="label">Title</div>
+                <div class="value">
+                    @Model.Title
+                </div>
+
+
+                <div class="label">LOB</div>
+                <div class="value">
+                    @Model.LOB
+                </div>
+
+
+                <div class="label">System</div>
+                <div class="value">
+                    @Model.SystemName
+                </div>
+
+
+                <div class="label">
+                    Assigned To User
+                </div>
+
+                <div class="value">
+
+                    @Model.AssignedToUser
+
+                    <button class="reassign">
+                        Re-Assign
+                    </button>
+
+                </div>
+
+
+                <div class="label">
+                    Assignment Type
+                </div>
+
+                <div class="value">
+
+                    @Model.AssignmentType
+
+                    <button class="reassign">
+                        Re-Assign
+                    </button>
+
+                </div>
+
+
+                <div class="label">
+                    Priority
+                </div>
+
+                <div class="value">
+                    @Model.Priority
+                </div>
+
+
+                <div class="label">
+                    Due Date
+                </div>
+
+                <div class="value">
+                    @Model.DueDate.ToString("dd/MM/yyyy")
+                </div>
+
+
+                <div class="label">
+                    Final Indicator
+                </div>
+
+                <div class="value">
+                    N
+                </div>
+
+
+                <div class="label">
+                    Interest Applicable
+                </div>
+
+                <div class="value">
+                    N
+                </div>
+
+
+                <div class="label">
+                    Escalation Indicator
+                </div>
+
+                <div class="value">
+                    Y/N
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CENTER COLUMN -->
+
+        <div class="center-panel">
+
+
+            <!-- CLAIM SUMMARY -->
+
+            <div class="claim-summary">
+
+                <div class="claim-circle">
+
+                    <div>Total</div>
+                    <div>Claims</div>
+
+                    <strong>
+                        @Model.TotalClaims
+                    </strong>
+
+                </div>
+
+
+                <div class="claim-types">
+
+                    <div class="claim-row">
+
+                        <span>
+                            Eligible Claims
+                        </span>
+
+                        <strong>
+                            @Model.EligibleClaims
+                        </strong>
+
+                    </div>
+
+
+                    <div class="claim-row">
+
+                        <span>
+                            Excluded Claims
+                        </span>
+
+                        <strong>
+                            @Model.ExcludedClaims
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROD SECTION -->
+
+            <div class="prod-section">
+
+                <b>Prod section</b>
+
+                <div>
+                    Shows up after
+                </div>
+
+                <div>
+                    Workflow state
+                </div>
+
+                <div>
+                    move to
+                </div>
+
+                <div>
+                    Reprocessing
+                </div>
+
+            </div>
+
+
+            <!-- CLAIM FINANCIALS -->
+
+            <div class="financial-section">
+
+                <div class="section-title">
+                    Claim Financials
+                </div>
+
+
+                <table class="financial-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th></th>
+
+                            <th>
+                                TEST
+                            </th>
+
+                            <th>
+                                PROD
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>
+                                Latest Reprocessing Date
+                            </td>
+
+                            <td>
+                                10/9/2026
+                            </td>
+
+                            <td>
+                                9/20/2026
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Total Claim Reprocessed
+                            </td>
+
+                            <td>
+                                @Model.TotalClaimReprocessedTest
+                            </td>
+
+                            <td>
+                                @Model.TotalClaimReprocessedProd
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Total Paid Before Reprocessing
+                            </td>
+
+                            <td>
+                                XXXX
+                            </td>
+
+                            <td>
+                                XXXX
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Total Paid After Reprocessing
+                            </td>
+
+                            <td>
+                                XXXX
+                            </td>
+
+                            <td>
+                                XXXX
+                            </td>
+
+                        </tr>
+
+
+                        <tr>
+
+                            <td>
+                                Net Processing Impact
+                            </td>
+
+                            <td>
+                                XXXX
+                            </td>
+
+                            <td>
+                                XXXX
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- BOTTOM INFORMATION -->
+
+            <div class="bottom-grid">
+
+                <div class="submit-box">
+
+                    &lt;Submit/Approve&gt;
+
+                    <br />
+
+                    DMAS Hold &gt;30 D
+
+                    <br />
+
+                    Contestation/
+
+                    <br />
+
+                    Reprocessing/
+
+                    <br />
+
+                    Post Analysis/Close
+
+                </div>
+
+
+                <div class="message-box">
+
+                    <b>
+                        Error/Warning message will appear upon
+                        clicking Assign/Reject button.
+                    </b>
+
+                    <br /><br />
+
+                    Warning message will appear if user is
+                    assigned to # of tickets beyond allowed limit.
+
+                    <br /><br />
+
+                    Error message will appear if system error.
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RIGHT COLUMN -->
+
+        <div class="right-panel">
+
+
+            <button class="on-hold-button">
+
+                Show up for On Hold case
+
+            </button>
+
+
+            <div class="on-hold-title">
+
+                On Hold
+
+            </div>
+
+
+            <div class="workflow-title">
+
+                Workflow Status
+
+            </div>
+
+
+            <div class="workflow">
+
+                @for (int i = 0; i < Model.WorkflowSteps.Count; i++)
+                {
+                    <div class="workflow-item">
+
+                        <div class="workflow-number
+                            @(i == 0 ? "current" : "")">
+
+                            @(i + 1)
+
+                        </div>
+
+                        <span>
+                            @Model.WorkflowSteps[i]
+                        </span>
+
+                    </div>
+                }
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
