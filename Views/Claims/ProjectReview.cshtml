@@ -130,9 +130,15 @@
 
                     @Model.AssignedToUser
 
-                    <button class="reassign">
+                    <button type="button" class="reassign" onclick="reassignProject()">
                         Re-Assign
                     </button>
+
+                    <script>
+                                            function reassignProject() {
+                                                alert("Re-Assign button clicked!");
+                                            }
+                    </script>
 
                 </div>
 
@@ -489,7 +495,7 @@
                         <div class="workflow-number
                             @(i == 0 ? "current" : "")">
 
-                            @(i + 1)
+                            @(i + 1) 
 
                         </div>
 
@@ -507,3 +513,12 @@
     </div>
 
 </div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#btnReAssign").click(function() {
+            window.location.href = "ReAssign.a spx";
+        });
+    });
+</script>
